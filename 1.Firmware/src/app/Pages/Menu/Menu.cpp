@@ -23,11 +23,12 @@ void Menu::onViewLoad()
 	Model.Init();
 	View.Create(root);
 	AttachEvent(root, onPlaygroundEvent);
-	AttachEvent(View.ui.dialpad.icon, onSuperDialEvent);
-	AttachEvent(View.ui.switches.icon, onPlaygroundEvent);
-	AttachEvent(View.ui.hass.icon, onHassEvent);
-	AttachEvent(View.ui.system.icon, onSystemEvent);
-	AttachEvent(View.ui.setting.icon, onSettingEvent);
+    // AttachEvent(View.ui.dialpad.icon, onSuperDialEvent);  // SurfaceDial 已移除
+    AttachEvent(View.ui.switches.icon, onPlaygroundEvent);
+    // HASS 入口已移除
+    // AttachEvent(View.ui.hass.icon, onHassEvent);
+    AttachEvent(View.ui.system.icon, onSystemEvent);
+    AttachEvent(View.ui.setting.icon, onSettingEvent);
 	// AttachEvent(View.ui.imu.icon);
 	// AttachEvent(View.ui.battery.icon);
 	// AttachEvent(View.ui.storage.icon);
@@ -148,7 +149,8 @@ void Menu::onSuperDialEvent(lv_event_t* event)
 //		stash.ptr = &mode;
 //		stash.size = sizeof(int16_t);
 //		instance->Manager->Push("Pages/SurfaceDial", &stash);
-		instance->Manager->Push("Pages/SurfaceDial");
+        // SurfaceDial 页面已移除
+        // instance->Manager->Push("Pages/SurfaceDial");
 	}
 }
 
@@ -158,8 +160,5 @@ void Menu::onHassEvent(lv_event_t* event)
 	lv_event_code_t code = lv_event_get_code(event);
 	auto* instance = (Menu*)lv_obj_get_user_data(obj);
 
-	if (code == LV_EVENT_SHORT_CLICKED) {
-		printf("Menu: onHassEvent LV_EVENT_PRESSED\n");
-		instance->Manager->Push("Pages/Hass");
-	}
+    // HASS 页面已移除，不再响应事件
 }

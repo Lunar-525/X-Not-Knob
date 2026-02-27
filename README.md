@@ -4,7 +4,8 @@
 本仓库基于 **X-Knob** 项目改造，用作我的个人节奏游戏 **Not-Knob**（暂定名，见 [Lunar-525/not-knob](https://github.com/Lunar-525/not-knob)）的实体控制器固件。
 
 原始 X-Knob 项目地址：<https://github.com/SmallPond/X-Knob>  
-本仓库主要做与音乐游戏相关的适配和精简，保留 LVGL 旋钮 UI 与电机触觉反馈能力。
+
+本仓库主要做与音乐游戏相关的适配和精简，计划修改为USB HID + USB CDC模式，~~保留 LVGL 旋钮 UI ~~与电机触觉反馈能力。
 
 ---
 

@@ -59,12 +59,12 @@ do{\
         IMPORT_IMG(dot_blue);
         IMPORT_IMG(macos);
 
-        // HASS
-        IMPORT_IMG(home);
-        IMPORT_IMG(home_fan);
-        IMPORT_IMG(home_bulb);
-        IMPORT_IMG(home_air_cond);
-        IMPORT_IMG(home_wash_machine);
+        // HASS 相关图标已不再使用
+        // IMPORT_IMG(home);
+        // IMPORT_IMG(home_fan);
+        // IMPORT_IMG(home_bulb);
+        // IMPORT_IMG(home_air_cond);
+        // IMPORT_IMG(home_wash_machine);
 
         //Setting
         IMPORT_IMG(setting);

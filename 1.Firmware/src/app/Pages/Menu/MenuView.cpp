@@ -23,18 +23,18 @@ void MenuView::Create(lv_obj_t* root)
 
 	Style_Init();
 
-	/* Item Super Dial */
-	Item_Create(
-		&ui.dialpad,
-		root,
-		"S-Dial",
-		"dialpad",
+	// /* Item Super Dial - 已移除 */
+	// Item_Create(
+	// 	&ui.dialpad,
+	// 	root,
+	// 	"S-Dial",
+	// 	"dialpad",
 
-		"Surface Dial"
-		"Control\n"
-		"Your PC\n"
-		"with X-Knob\n"
-	);
+	// 	"Surface Dial"
+	// 	"Control\n"
+	// 	"Your PC\n"
+	// 	"with X-Knob\n"
+	// );
 
 	Item_Create(
 		&ui.switches,
@@ -49,17 +49,18 @@ void MenuView::Create(lv_obj_t* root)
 		"Fine values\n"
 		"Coarse values\n"
 	);
-	Item_Create(
-		&ui.hass,
-		root,
-		"S-Home",
-		"home",
+	// /* Item HASS - 已移除 */
+	// Item_Create(
+	// 	&ui.hass,
+	// 	root,
+	// 	"S-Home",
+	// 	"home",
 
-		"Your Smart Home\n"
-		"Light \n"
-		"Fan \n"
-		"Monitor Bar"
-	);
+	// 	"Your Smart Home\n"
+	// 	"Light \n"
+	// 	"Fan \n"
+	// 	"Monitor Bar"
+	// );
 	// /* Item Setting */
 	// /* Item System */
 	Item_Create(
@@ -125,9 +126,9 @@ void MenuView::Group_Init()
 	lv_group_set_focus_cb(ui.group, onFocus);
 	lv_indev_set_group(lv_get_indev(LV_INDEV_TYPE_ENCODER), ui.group);
 
-	lv_group_add_obj(ui.group, ui.dialpad.icon);
+	// lv_group_add_obj(ui.group, ui.dialpad.icon);  // SurfaceDial 已移除
 	lv_group_add_obj(ui.group, ui.switches.icon);
-	lv_group_add_obj(ui.group, ui.hass.icon);
+	// lv_group_add_obj(ui.group, ui.hass.icon);  // HASS 已移除
 	lv_group_add_obj(ui.group, ui.system.icon);
 	lv_group_add_obj(ui.group, ui.setting.icon);
 	// lv_group_add_obj(ui.group, ui.battery.icon);
