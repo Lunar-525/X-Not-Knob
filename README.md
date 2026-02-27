@@ -12,7 +12,7 @@
 
 1. 使用 VSCode + PlatformIO 打开工程。  
 2. 将 `src/secrets.h.example` 复制为 `src/secrets.h`，并根据实际环境修改 Wi-Fi / MQTT 等配置（如不需要 MQTT，可在 `platformio.ini` 中关闭相关宏）。  
-3. 连接 ESP32-S3，编译并烧录固件，然后在 PC 上启动 Not-Knob 游戏进行联调。
+~~3. 连接 ESP32-S3，编译并烧录固件，然后在 PC 上启动 Not-Knob 游戏进行联调。~~
 
 更多底层硬件与 UI 实现细节请参考原项目 README：<https://github.com/SmallPond/X-Knob>。
 
