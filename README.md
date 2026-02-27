@@ -1,7 +1,7 @@
 
 ### Not-Knob Controller Firmware
 
-本仓库基于 **X-Knob** 项目改造，用作我个人节奏游戏 **Not-Knob**（工作名 Not Knob，见 [Lunar-525/not-knob](https://github.com/Lunar-525/not-knob)）的实体控制器固件。
+本仓库基于 **X-Knob** 项目改造，用作我的个人节奏游戏 **Not-Knob**（暂定名，见 [Lunar-525/not-knob](https://github.com/Lunar-525/not-knob)）的实体控制器固件。
 
 原始 X-Knob 项目地址：<https://github.com/SmallPond/X-Knob>  
 本仓库主要做与音乐游戏相关的适配和精简，保留 LVGL 旋钮 UI 与电机触觉反馈能力。
@@ -21,4 +21,4 @@
 ### 协议与致谢
 
 - 本仓库沿用原 X-Knob 的 MIT 相关约束及上游依赖协议，请在使用和分发时遵守相应开源许可。  
-- 特别感谢 X-Knob 及 [Not-Knob 音乐游戏项目](https://github.com/Lunar-525/not-knob) 提供的灵感与基础代码。 
+- 特别感谢 X-Knob 提供的基础代码。 
