@@ -29,6 +29,7 @@
 #include "HASS/Hass.h"
 #include "SurfaceDial/SurfaceDial.h"
 #include "Setting/Setting.h"
+#include "UsbHC/UsbHC.h"
 
 // #include "Scene3D/Scene3D.h"
 
@@ -49,6 +50,7 @@ PageBase* AppFactory::CreatePage(const char* name)
     APP_CLASS_MATCH(Startup);
     APP_CLASS_MATCH(Hass);
     APP_CLASS_MATCH(Setting);
+    APP_CLASS_MATCH(UsbHC);
     // APP_CLASS_MATCH(Scene3D);
 
     return nullptr;

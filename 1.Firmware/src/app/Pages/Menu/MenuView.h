@@ -28,6 +28,7 @@ public:
         item_t system;
         item_t hass;   // home assistant
         item_t setting;
+        item_t usb_hc;
         item_t battery;
         item_t storage;
         lv_group_t* group;

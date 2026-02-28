@@ -27,6 +27,7 @@ void Menu::onViewLoad()
     AttachEvent(View.ui.switches.icon, onPlaygroundEvent);
     // HASS 入口已移除
     // AttachEvent(View.ui.hass.icon, onHassEvent);
+    AttachEvent(View.ui.usb_hc.icon, onUsbHCEvent);
     AttachEvent(View.ui.system.icon, onSystemEvent);
     AttachEvent(View.ui.setting.icon, onSettingEvent);
 	// AttachEvent(View.ui.imu.icon);
@@ -151,6 +152,18 @@ void Menu::onSuperDialEvent(lv_event_t* event)
 //		instance->Manager->Push("Pages/SurfaceDial", &stash);
         // SurfaceDial 页面已移除
         // instance->Manager->Push("Pages/SurfaceDial");
+	}
+}
+
+void Menu::onUsbHCEvent(lv_event_t* event)
+{
+	lv_obj_t* obj = lv_event_get_target(event);
+	lv_event_code_t code = lv_event_get_code(event);
+	auto* instance = (Menu*)lv_obj_get_user_data(obj);
+
+	if (code == LV_EVENT_PRESSED) {
+		printf("Menu: onUsbHCEvent LV_EVENT_PRESSED\n");
+		instance->Manager->Push("Pages/UsbHC");
 	}
 }
 

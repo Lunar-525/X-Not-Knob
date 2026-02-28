@@ -41,6 +41,7 @@ typedef enum
     MOTOR_COARSE_DETENTS,       // Coarse values\nStrong detents
     MOTOR_FINE_NO_DETENTS,     // Fine values\nNo detents
     MOTOR_ON_OFF_STRONG_DETENTS,             // "On/off\nStrong detent"
+    MOTOR_USB_PASSTHROUGH,                   // USB 透传：跳过所有 detent 逻辑，电机由 PC 直接控制
     MOTOR_MAX_MODES, //
 
 } MOTOR_RUNNING_MODE_E;

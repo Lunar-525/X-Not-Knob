@@ -46,6 +46,7 @@ void App_Init()
     // manager.Install("SurfaceDial", "Pages/SurfaceDial");
     // HASS 页面已移除
     // manager.Install("Hass","Pages/Hass");
+    manager.Install("UsbHC", "Pages/UsbHC");
     manager.Install("Setting","Pages/Setting");
     manager.Install("WiFi","Pages/WiFi");
     // manager.Install("Scene3D", "Pages/Scene3D");

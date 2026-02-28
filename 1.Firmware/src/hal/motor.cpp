@@ -2,6 +2,7 @@
 #include "motor.h"
 #include <SimpleFOC.h>
 #include "app/Accounts/Account_Master.h"
+#include "hal/usb_hc.h"
 
 static const int spiClk = 1000000; // 400KHz
 SPIClass* hspi = NULL;
@@ -112,6 +113,15 @@ static XKnobConfig x_knob_configs[] = {
         0.55,                    // Note the snap point is slightly past the midpoint (0.5); compare to normal detents which use a snap point *past* the next value (i.e. > 1)
         "On/off\nStrong detent", //模拟开关  强制动
     },
+    [MOTOR_USB_PASSTHROUGH] = {
+        0,
+        0,
+        1 * PI / 180,
+        0,
+        0,
+        1.1,
+        "USB Passthrough",       // USB 透传：电机由 PC 直接控制
+    },
 
 };
 
@@ -149,6 +159,9 @@ float idle_check_velocity_ewma = 0;
 
 // 电机角度到当前位置的偏差
 float angle_to_detent_center = 0;
+
+// USB 透传模式标志
+static volatile bool motor_usb_passthrough = false;
 //  ------------monitor--------------------
 Commander commander = Commander(Serial, '\n', false);
 void onPid(char* cmd){commander.pid(&motor.PID_velocity, cmd);}
@@ -209,6 +222,7 @@ int HAL::get_motor_position(void)
 
 void HAL::update_motor_mode(int mode , int init_position)
 {
+    motor_usb_passthrough = (mode == MOTOR_USB_PASSTHROUGH);
     motor_config = x_knob_configs[mode];
     motor_config.position = init_position;
     #if XK_INVERT_ROTATION
@@ -248,6 +262,15 @@ void TaskMotorUpdate(void *pvParameters)
     while(1) {
         sensor.update();
         motor.loopFOC();
+
+        // USB 透传快速路径：跳过所有 detent/position/idle 逻辑
+        if (motor_usb_passthrough) {
+            float t = usb_hc_get_target_torque();
+            motor.move(t);
+            usb_hc_update_state(motor.shaft_angle, motor.shaft_velocity);
+            vTaskDelay(1);
+            continue;
+        }
 
         idle_check_velocity_ewma = motor.shaft_velocity * IDLE_VELOCITY_EWMA_ALPHA + idle_check_velocity_ewma * (1 - IDLE_VELOCITY_EWMA_ALPHA);
         if (fabsf(idle_check_velocity_ewma) > IDLE_VELOCITY_RAD_PER_SEC)

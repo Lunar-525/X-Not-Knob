@@ -76,6 +76,18 @@ void MenuView::Create(lv_obj_t* root)
 		"Compiler\n\n"
 		"Build\n"
 	);
+	/* Item USB H/C */
+	Item_Create(
+		&ui.usb_hc,
+		root,
+		"USB H/C",
+		"dialpad",
+
+		"USB HID + CDC\n"
+		"Motor Passthrough\n"
+		"1ms HID Report\n"
+	);
+
 	Item_Create(
 		&ui.setting,
 		root,
@@ -130,6 +142,7 @@ void MenuView::Group_Init()
 	lv_group_add_obj(ui.group, ui.switches.icon);
 	// lv_group_add_obj(ui.group, ui.hass.icon);  // HASS 已移除
 	lv_group_add_obj(ui.group, ui.system.icon);
+	lv_group_add_obj(ui.group, ui.usb_hc.icon);
 	lv_group_add_obj(ui.group, ui.setting.icon);
 	// lv_group_add_obj(ui.group, ui.battery.icon);
 	// lv_group_add_obj(ui.group, ui.storage.icon);
