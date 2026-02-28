@@ -2,10 +2,12 @@
 
 本文档用于说明如何将固件编译并通过USB上传到设备。主要步骤如下：
 
+0. **先 git clone 本项目到本地**
+
 1. **安装 VS Code 和 PlatformIO 插件**
 
    - 如果还未安装，请从 [Visual Studio Code 官网](https://code.visualstudio.com/) 下载并安装 VS Code。
-   - 打开1.FIRMWARE文件夹作为工作区，但是打开上级目录（X-Not-Knob）作为repository。
+   - 打开1.FIRMWARE文件夹作为工作区，但是打开上级目录（X-Not-Knob）作为repository (大部分情况下右下角会提示是否打开上级目录作为repo，除非你不是git clone下来的)。
    - 进入扩展市场（大部分情况下右下角会提示是否自动安装 PlatformIO IDE），搜索并安装 `PlatformIO IDE` 插件。
    - 安装完成后，重启 VS Code。
 
