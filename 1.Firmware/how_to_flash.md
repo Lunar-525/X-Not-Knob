@@ -28,10 +28,8 @@
 
 3. **编译并上传固件**
 
-   - 在 VS Code 中打开本工程的工作区。确保 `platformio.ini` 配置正确，选择目标板。
+   - 在 VS Code 中打开本工程的工作区。确保 `platformio.ini` 配置正确（你通常不需要做什么）。
    - 在编辑窗口的右上角，点击那个向右的箭头图标（或使用快捷键 `Ctrl+Alt+U`），PlatformIO 会先编译固件，然后自动上传。
    - 等待任务完成，终端会显示上传成功的信息。
 
-> **注意**: 任何时候如果需要恢复原始行为，只需将 `upload.before_reset` 的 `usb_reset` 改回 `default_reset`。
-
-祝你刷机顺利！
+> **注意**: 任何时候如果需要恢复原始行为，只需将 `upload.before_reset` 的 `usb_reset` 改回 `default_reset`。若你需要刷回原固件，请参见 https://github.com/SmallPond/X-Knob ，具体流程大同小异。
